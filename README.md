@@ -32,18 +32,22 @@ Stress_Level: stress rating or level reported by the student
 The datasets will be merged using the Student_ID column so that each student’s exam results can be analyzed together with their sleep information.
 
 # Methodology
+---
 **Data Cleaning**
 Remove missing or inconsistent entries (e.g., students without exam or sleep data).
 Standardize student identifiers and ensure matching between datasets.
 Convert categorical variables into numeric form if necessary.
+---
 **Data Integration**
 Merge both datasets on Student_ID.
 Create a combined dataset that includes each student’s exam score, study hours, and sleep duration.
+---
 **Data Analysis**
 Calculate each student’s average exam score.
 Explore how Sleep_Hours correlates with Exam_Score.
 Compare mean exam scores across different sleep ranges (e.g., <6h, 6–8h, >8h).
 Use correlation analysis and regression modeling to test if longer sleep is associated with higher exam performance.
+---
 **Visualization**
 Scatter plots: Sleep hours vs Exam scores
 Box plots: Exam scores grouped by sleep duration categories
