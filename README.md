@@ -1,29 +1,50 @@
-# Sleep Duration and Academic Performance Among University Students
+# The Relationship Between Sleep Duration and Exam Performance Among Students
 
 # Research Question
-Do students who sleep longer hours perform better academically?
+Do students who sleep longer hours achieve higher exam scores on average?
 
 # Motivation
-For students' physical and mental well-being, sleep is essential. Due to stress, social engagements, and homework, university students frequently have unpredictable sleep patterns. Poor focus, decreased learning effectiveness, and inferior academic accomplishment can result from sleep deprivation.
+Students' cognitive abilities, including memory, focus, and learning effectiveness, are greatly impacted by sleep. Many students forgo sleep during exam times because they think it would help them perform better. However, research indicates that sleep deprivation may hinder concentration and lower exam scores.
 
-This experiment aims to investigate if sleep duration affects students' academic performance as determined by their Grade Point Average (GPA). The study specifically looks into whether students who get more sleep typically have higher GPAs.
+This project's goal is to determine whether students who get more sleep before tests typically do better. The initiative intends to shed light on how lifestyle choices affect academic performance by examining sleep patterns in conjunction with test scores.
 
-Gaining knowledge about this relationship might help one understand how lifestyle choices impact academic performance. The results may aid instructors and students in realizing how crucial balanced sleep schedules are to academic success.
+Teachers and students can make better decisions about sleep management and study schedules if they are aware of this relationship.
 
 # Data Sources
-This project uses publicly available datasets to examine the relationship between sleep patterns and GPA.
-  Student Sleep Dataset
-    
-    *Source: Kaggle – Student Sleep Dataset
-    *Description: Contains information about students’ sleep duration, study habits, stress levels, caffeine intake, and academic performance (GPA).
-    *Key Variables:
-    *Sleep_Hours: Average number of hours slept per day
-    *GPA: Academic performance indicator
-    *Study_Hours: Average daily study time
-    *Stress_Level: Level of stress on a numeric scale
-    *Caffeine_Intake: Daily caffeine consumption
-    
-  Sleep Health and Lifestyle Dataset (for enrichment)
-    *Source: Kaggle – Sleep Health and Lifestyle Dataset
-    *Description: Includes data on sleep duration, quality of sleep, stress levels, and daily routines across various occupations.
-    *This dataset can be used to compare general sleep trends among different groups or to validate the findings obtained from the student-specific dataset.
+
+Student Exam Scores Dataset
+File: student_exam_scores.csv
+Description: Contains students’ exam performance across different subjects and exams.
+Key Variables (examples):
+Student_ID: unique identifier for each student
+Exam_Score: score obtained in each exam
+Subject: name of the subject or exam type
+Study_Hours: number of hours studied before the exam
+
+Student Performance Score Dataset
+File: SrudentPerformanceScore.csv
+Description: Provides information about each student’s sleep duration and related lifestyle habits.
+Key Variables (examples):
+Student_ID: student identifier (to merge with exam dataset)
+Sleep_Hours: average daily sleep duration
+Performance_Score: overall academic performance indicator
+Stress_Level: stress rating or level reported by the student
+The datasets will be merged using the Student_ID column so that each student’s exam results can be analyzed together with their sleep information.
+
+# Methodology
+**Data Cleaning**
+Remove missing or inconsistent entries (e.g., students without exam or sleep data).
+Standardize student identifiers and ensure matching between datasets.
+Convert categorical variables into numeric form if necessary.
+**Data Integration**
+Merge both datasets on Student_ID.
+Create a combined dataset that includes each student’s exam score, study hours, and sleep duration.
+**Data Analysis**
+Calculate each student’s average exam score.
+Explore how Sleep_Hours correlates with Exam_Score.
+Compare mean exam scores across different sleep ranges (e.g., <6h, 6–8h, >8h).
+Use correlation analysis and regression modeling to test if longer sleep is associated with higher exam performance.
+**Visualization**
+Scatter plots: Sleep hours vs Exam scores
+Box plots: Exam scores grouped by sleep duration categories
+Correlation heatmap: Sleep hours, study hours, and exam scores
