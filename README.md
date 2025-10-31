@@ -13,6 +13,7 @@ Gaining knowledge about this relationship might help one understand how lifestyl
 # Data Sources
 This project uses publicly available datasets to examine the relationship between sleep patterns and GPA.
   Student Sleep Dataset
+    
     *Source: Kaggle – Student Sleep Dataset
     *Description: Contains information about students’ sleep duration, study habits, stress levels, caffeine intake, and academic performance (GPA).
     *Key Variables:
@@ -21,6 +22,7 @@ This project uses publicly available datasets to examine the relationship betwee
     *Study_Hours: Average daily study time
     *Stress_Level: Level of stress on a numeric scale
     *Caffeine_Intake: Daily caffeine consumption
+    
   Sleep Health and Lifestyle Dataset (for enrichment)
     *Source: Kaggle – Sleep Health and Lifestyle Dataset
     *Description: Includes data on sleep duration, quality of sleep, stress levels, and daily routines across various occupations.
