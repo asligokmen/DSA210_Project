@@ -79,6 +79,14 @@ It is expected that multiple academic and lifestyle factors—including sleep ha
 - Data cleaning steps included  
 - Hypothesis testing (correlation, ANOVA, regression) completed  
 - Visualizations included (histograms, scatter plots, heatmap, boxplots)
+- 
+## 02 January Deliverables 
+- Applied supervised machine learning methods to predict student performance.
+- Analyzed the two datasets separately.
+- Used Linear Regression and Random Forest Regression models.
+- Split datasets into training 80% and test 20% sets.
+- Applied feature scaling using StandardScaler where required.
+- Evaluated models using R^2 score and Mean Squared Error.
 
 ## Author
 Prepared by: Aslı Gökmen  
