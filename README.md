@@ -1,92 +1,125 @@
 # Multivariate Analysis of Factors Influencing Student Exam Performance
 
+## Project Overview
+This project investigates academic and lifestyle factors influencing students’ exam performance from a multivariate perspective. The analysis focuses on how sleep duration, study hours, stress level, attendance rate, and previous academic performance jointly affect exam scores.
+
+The project was prepared as a term project for DSA210 – Introduction to Data Science. According to the course guidelines, a separate PDF report is not required. Instead, this README summarizes the project motivation, data sources, methodology, findings, and limitations, while detailed analyses, numerical results, and code implementations are provided in the accompanying Jupyter notebooks.
+
 ## Research Question
-How do sleep duration, study hours, stress level, and previous academic performance collectively influence students’ exam scores?
+How do sleep duration, study hours, stress level, attendance, and previous academic performance collectively influence students’ exam scores?
+
+Rather than examining each factor in isolation, this project aims to understand how these variables interact and jointly contribute to academic outcomes.
 
 ## Motivation
-Student academic success is shaped by multiple behavioral and lifestyle factors. While sleep duration affects cognitive performance, variables such as stress level, study habits, class attendance, and previous exam experience also play major roles. This project aims to analyze how these factors *together* influence exam performance. Understanding these relationships helps students make better decisions regarding time management, sleep schedules, stress control, and study strategies.
+Student academic success is shaped by a combination of behavioral, cognitive, and lifestyle-related factors. While prior research often examines variables such as sleep or study time independently, real-world performance is influenced by the interaction of multiple factors.
+
+This project aims to:
+- Provide data-driven insights into how academic and lifestyle variables jointly influence exam performance
+- Help students make more informed decisions about time management, sleep habits, and stress control
+- Demonstrate the use of multivariate statistical analysis and machine learning techniques in an educational context
 
 ## Data Sources
+Two publicly available Kaggle datasets were used in this project.
 
-### Student Exam Scores Dataset
-- File: `student_exam_scores.csv`
-- Link: https://www.kaggle.com/datasets/mirzayasirabdullah07/student-exam-scores-dataset  
-- Variables:
-  - student_id  
-  - hours_studied  
-  - sleep_hours  
-  - attendance_percent  
-  - previous_scores  
-  - exam_score  
+Student Exam Scores Dataset:
+File: student_exam_scores.csv  
+Source: https://www.kaggle.com/datasets/mirzayasirabdullah07/student-exam-scores-dataset  
+Variables:
+- student_id
+- hours_studied
+- sleep_hours
+- attendance_percent
+- previous_scores
+- exam_score
 
-### Student Performance Score Dataset
-- File: `SrudentPerformanceScore.csv`
-- Link: https://www.kaggle.com/datasets/mustafamaher2520/student-performance-data  
-- Variables:
-  - Student_ID  
-  - Sleep_Hours  
-  - Study_Hours  
-  - Stress_Level  
-  - Previous_Exam_Scores  
+Student Performance Score Dataset:
+File: SrudentPerformanceScore.csv  
+Source: https://www.kaggle.com/datasets/mustafamaher2520/student-performance-data  
+Variables:
+- Student_ID
+- Sleep_Hours
+- Study_Hours
+- Stress_Level
+- Previous_Exam_Scores
 
-Both datasets are merged using `student_id`.
+The two datasets were merged using the student_id field after preprocessing and standardization.
 
-## 4. Features Used
-- Sleep Hours  
-- Study Hours  
-- Stress Level  
-- Attendance Percent  
-- Previous Scores  
+## Features Used
+- Sleep Hours
+- Study Hours
+- Stress Level
+- Attendance Percent
+- Previous Scores
 - Exam Score (dependent variable)
 
-## 5. Methodology
+## Methodology
 
-### Data Cleaning
-- Standardized column names  
-- Removed missing or inconsistent entries  
-- Cleaned student ID fields  
-- Merged datasets using inner join  
-- Created sleep categories (<6h, 6–8h, >8h)
+Data Cleaning and Preprocessing:
+- Standardized column names across datasets
+- Removed missing and inconsistent observations
+- Cleaned and aligned student ID fields
+- Merged datasets using an inner join
+- Categorized sleep duration into < 6 hours, 6–8 hours, and > 8 hours
 
-### Exploratory Data Analysis (EDA)
-- Descriptive statistics  
-- Histograms for key variables  
-- Scatter plots  
-- Correlation matrix  
-- Boxplots by sleep category  
+Exploratory Data Analysis (EDA):
+- Descriptive statistics for all variables
+- Distribution analysis using histograms
+- Scatter plot analysis of key relationships
+- Correlation matrix
+- Boxplots comparing exam scores across sleep categories
 
-### Hypothesis Testing
-- Pearson correlation tests  
-- ANOVA across sleep categories  
-- Simple regression (Sleep → Exam Score)  
-- Multiple regression (Sleep + Study + Stress + Previous Scores → Exam Score)
+Statistical Analysis and Hypothesis Testing:
+- Pearson correlation tests
+- ANOVA across sleep duration categories
+- Simple linear regression (Sleep → Exam Score)
+- Multiple linear regression (Sleep, Study, Stress, Previous Scores → Exam Score)
 
-## Expected Outcome
-It is expected that multiple academic and lifestyle factors—including sleep habits, study hours, stress level, and prior performance—collectively influence exam outcomes. Regression analysis will help identify which factors act as the strongest predictors of exam performance.
+## Machine Learning Extension
+In addition to statistical analyses, supervised machine learning models were applied to predict student exam performance.
 
-## Tools
-- Python  
-- pandas  
-- seaborn  
-- matplotlib  
-- statsmodels  
-- scipy  
+Models used:
+- Linear Regression
+- Random Forest Regression
+
+Modeling pipeline:
+- Each dataset analyzed separately
+- Train–test split: 80% training and 20% testing
+- Feature scaling using StandardScaler where required
+- Model evaluation using R² Score and Mean Squared Error (MSE)
+
+## Summary of Findings
+Overall results indicate that:
+- Previous academic performance is one of the strongest predictors of exam scores
+- Sleep duration and study hours have meaningful but limited standalone effects
+- Higher stress levels are generally associated with lower performance
+- Multivariate regression and machine learning models provide stronger explanatory power than single-variable analyses
+
+Detailed numerical results, tables, and visualizations are available in the project notebooks.
+
+## Limitations
+- The datasets are secondary or synthetic and may not fully reflect real-world student populations
+- Individual learning styles and course difficulty levels are not captured
+- Stress level is based on self-reported measures
+- No temporal or user-history modeling was applied
+
+## Project Structure
+data/
+- student_exam_scores.csv
+- SrudentPerformanceScore.csv
+
+analysis.ipynb  
+ml_models.ipynb  
+README.md
+
+## Tools and Technologies
+- Python
+- pandas
+- matplotlib
+- seaborn
+- scipy
+- statsmodels
+- scikit-learn
 - Jupyter Notebook / Google Colab
-- 
-## 30 November Deliverables
-- Raw datasets uploaded under /data  
-- Full EDA performed in analysis.ipynb  
-- Data cleaning steps included  
-- Hypothesis testing (correlation, ANOVA, regression) completed  
-- Visualizations included (histograms, scatter plots, heatmap, boxplots)
-- 
-## 02 January Deliverables 
-- Applied supervised machine learning methods to predict student performance.
-- Analyzed the two datasets separately.
-- Used Linear Regression and Random Forest Regression models.
-- Split datasets into training 80% and test 20% sets.
-- Applied feature scaling using StandardScaler where required.
-- Evaluated models using R^2 score and Mean Squared Error.
 
 ## Author
 Prepared by: Aslı Gökmen  
